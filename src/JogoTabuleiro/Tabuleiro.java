@@ -35,6 +35,15 @@ public class Tabuleiro {
 	}
 	
 	
+	//Retornar a peça pela linha e coluna
+	public Peca peca(int linha, int coluna) {
+		return pecas[linha][coluna];
+	}
+	
+	//Retornar a peça pela a posição
+	public Peca peca(Posicao posicao) {
+		return pecas[posicao.getLinha()][posicao.getColuna()];
+	}
 	
 	
 	
