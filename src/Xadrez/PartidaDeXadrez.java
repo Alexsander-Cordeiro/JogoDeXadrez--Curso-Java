@@ -1,6 +1,9 @@
 package Xadrez;
 
+import JogoTabuleiro.Posicao;
 import JogoTabuleiro.Tabuleiro;
+import Xadrez.pecas.Rei;
+import Xadrez.pecas.Torre;
 
 public class PartidaDeXadrez {
 
@@ -9,6 +12,7 @@ public class PartidaDeXadrez {
 	//nesse método tem que colocar o tamanho do tabuleiro de xadrez
 	public PartidaDeXadrez() {
 		tabuleiro = new Tabuleiro(8,8);
+		configuracaoInicial();
 		
 	}
 	
@@ -24,4 +28,10 @@ public class PartidaDeXadrez {
 		}
 		return mat;
 	}	
+	
+	private void configuracaoInicial() {
+		tabuleiro.ColocarPeca(new Torre(tabuleiro,Cor.WHITE), new Posicao(2,1));
+		tabuleiro.ColocarPeca(new Rei(tabuleiro,Cor.BLACK), new Posicao(0,4));
+		tabuleiro.ColocarPeca(new Rei(tabuleiro,Cor.WHITE), new Posicao(7,4));
+	}
 }
