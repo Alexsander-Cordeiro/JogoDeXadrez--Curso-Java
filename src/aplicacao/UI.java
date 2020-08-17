@@ -54,6 +54,7 @@ public class UI {
 		}
 	}
 
+	//IMPRIMIR TABULEIRO 
 	public static void printTabuleiro(PecaDeXadrez[][] pecas) {
 		// percorrer a linha colocando o numero dela
 		for (int i = 0; i < pecas.length; i++) {
@@ -62,7 +63,25 @@ public class UI {
 			// percorrer as colunas e colocando a peça em cada uma e no final pulando de
 			// linha.
 			for (int j = 0; j < pecas.length; j++) {
-				printPeca(pecas[i][j]);
+				printPeca(pecas[i][j], false);
+			}
+			System.out.println();
+		}
+		// Colocando no final as letras em cada coluna
+		System.out.print("  a b c d e f g h");
+	}
+	
+	
+	//IMPRIMIR O TABULEIRO COM OS POSSIVEIS MOVIMENTOS
+	public static void printTabuleiro(PecaDeXadrez[][] pecas, boolean[][] possiveisMovimentos) {
+		// percorrer a linha colocando o numero dela
+		for (int i = 0; i < pecas.length; i++) {
+			System.out.print((8 - i) + " ");
+
+			// percorrer as colunas e colocando a peça em cada uma e no final pulando de
+			// linha.
+			for (int j = 0; j < pecas.length; j++) {
+				printPeca(pecas[i][j], possiveisMovimentos[i][j]);
 			}
 			System.out.println();
 		}
@@ -70,9 +89,13 @@ public class UI {
 		System.out.print("  a b c d e f g h");
 	}
 
-	private static void printPeca(PecaDeXadrez peca) {
+	//a variavel Background usada para colocar cor no fundo 
+	private static void printPeca(PecaDeXadrez peca, boolean background) {
+		if (background) {
+			System.out.print(ANSI_BLUE_BACKGROUND);
+		}
 		if (peca == null) {
-			System.out.print("-");
+			System.out.print("-" + ANSI_RESET);
 		} else {
 			if (peca.getCor() == Cor.WHITE) {
 				System.out.print(ANSI_WHITE + peca + ANSI_RESET);

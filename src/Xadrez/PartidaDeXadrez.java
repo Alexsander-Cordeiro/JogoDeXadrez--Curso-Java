@@ -30,6 +30,16 @@ public class PartidaDeXadrez {
 		return mat;
 	}	
 	
+	
+	//Método para imprimir quais as possiveis posicoes que existem para a peca de origem
+	public boolean[][] possiveisMovimentos(PosicaoXadrez posicaoOrigem){
+		Posicao posicao = posicaoOrigem.toPosicao();
+		validacaoPosicaoOrigem(posicao);
+		return tabuleiro.peca(posicao).possiveisMovimentos();
+		
+	}
+	
+	
 	public PecaDeXadrez desempenhoMovimentoXadrez(PosicaoXadrez posicaoOrigem, PosicaoXadrez posicaoDestino) {
 		Posicao origem = posicaoOrigem.toPosicao();
 		Posicao destino = posicaoDestino.toPosicao();
