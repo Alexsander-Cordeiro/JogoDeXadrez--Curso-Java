@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Xadrez.Cor;
+import Xadrez.PartidaDeXadrez;
 import Xadrez.PecaDeXadrez;
 import Xadrez.PosicaoXadrez;
 
@@ -52,6 +53,13 @@ public class UI {
 			throw new InputMismatchException("Erro lendo posição de xadrez. Valores validos são de a1 até h8");
 			
 		}
+	}
+	
+	public static void printPartida(PartidaDeXadrez partidaDeXadrez) {
+		printTabuleiro(partidaDeXadrez.getPecas());
+		System.out.println();
+		System.out.println("Turno: "+ partidaDeXadrez.getTurno());
+		System.out.println("Aguardando jogador: " + partidaDeXadrez.getJogadorAtual());
 	}
 
 	//IMPRIMIR TABULEIRO 
