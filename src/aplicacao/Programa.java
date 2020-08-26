@@ -19,7 +19,7 @@ public class Programa {
 		List<PecaDeXadrez> captura = new ArrayList<>();
 		
 		//Recebe a MATRIZ de peças da minha partida
-		while(true) {
+		while(!partidaDeXadrez.getCheckMate()) {
 			try {
 				UI.clearScreen();
 				UI.printPartida(partidaDeXadrez, captura);
@@ -55,7 +55,8 @@ public class Programa {
 			
 		}
 		
-		
+		UI.clearScreen();
+		UI.printPartida(partidaDeXadrez, captura);
 		
 	}
 
