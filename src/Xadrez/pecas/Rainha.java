@@ -14,7 +14,7 @@ public class Rainha extends PecaDeXadrez{
 
 	@Override
 	public String toString() {
-		return "N";
+		return "Q";
 	}
 	
 	@Override
