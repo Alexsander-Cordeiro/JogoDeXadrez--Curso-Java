@@ -42,9 +42,15 @@ public class Programa {
 					captura.add(pecaCapturada);
 				}
 				
+				
 				if(partidaDeXadrez.getPromover() != null) {
 					System.out.print("Entre com a peça que será promovida(B/N/R/Q): ");
-					String type = sc.nextLine();
+					String type = sc.nextLine().toUpperCase();
+					
+				while (!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
+					System.out.println("Valor invalido! Entre com a peça que será promovida(B/N/R/Q): ");
+					type = sc.nextLine().toUpperCase();
+				}
 					partidaDeXadrez.colocarPecaPromovida(type);
 				}
 				
