@@ -42,6 +42,12 @@ public class Programa {
 					captura.add(pecaCapturada);
 				}
 				
+				if(partidaDeXadrez.getPromover() != null) {
+					System.out.print("Entre com a peça que será promovida(B/N/R/Q): ");
+					String type = sc.nextLine();
+					partidaDeXadrez.colocarPecaPromovida(type);
+				}
+				
 				
 			}
 			catch (ExcecaoXadrez e) {
