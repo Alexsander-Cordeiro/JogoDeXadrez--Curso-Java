@@ -14,7 +14,7 @@ public class Cavalo extends PecaDeXadrez{
 	
 	@Override
 	public String toString() {
-		return "C";
+		return "N";
 	}
 
 	//Verificar se ira poder mover a peça do Cavalo

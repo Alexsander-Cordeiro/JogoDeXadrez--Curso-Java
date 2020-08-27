@@ -20,7 +20,7 @@ public class Rei extends PecaDeXadrez{
 	
 	@Override
 	public String toString() {
-		return "R";
+		return "K";
 	}
 
 	//Verificar se ira poder mover a peça do REI
